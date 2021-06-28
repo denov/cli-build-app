@@ -48,6 +48,10 @@
 				}
 			}
 		},
+		"polyfills": {
+			"type": "array",
+			"items": { "type": "string" }
+		},
 		"cldrPaths" : {
 			"type": "array",
 			"items": { "type": "string" }
@@ -429,6 +433,9 @@
 		},
 		"bundles": {
 			"$ref": "#/definitions/bundles"
+		},
+		"polyfills": {
+			"$ref": "#/definitions/polyfills"
 		},
 		"cldrPaths" : {
 			"$ref": "#/definitions/cldrPaths"

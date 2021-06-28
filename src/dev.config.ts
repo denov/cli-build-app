@@ -138,6 +138,14 @@ window['${libraryName}'].base = '${base}'</script>`,
 		path: outputPath
 	};
 
+	if (Array.isArray(args.polyfills)) {
+		const polyfills: any = {};
+		args.polyfills.forEach((module: any) => {
+			polyfills[module] = true;
+		});
+		config.node = polyfills;
+	}
+
 	return config;
 }
 

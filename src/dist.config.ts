@@ -171,6 +171,14 @@ function webpackConfig(args: any): webpack.Configuration {
 		filename: args.omitHash ? '[name].bundle.js' : '[name].[chunkhash].bundle.js'
 	};
 
+	if (Array.isArray(args.polyfills)) {
+		const polyfills: any = {};
+		args.polyfills.forEach((module: any) => {
+			polyfills[module] = true;
+		});
+		config.node = polyfills;
+	}
+
 	return config;
 }
 
